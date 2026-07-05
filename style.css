@@ -216,6 +216,14 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
 }
 
+.text-orange {
+  color: var(--orange);
+}
+
+.services-lead {
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+}
+
 .services-stack {
   display: flex;
   flex-direction: column;
@@ -316,6 +324,10 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.01em;
 }
 
+.statement-text-lg {
+  font-size: clamp(2.2rem, 4.8vw, 3.4rem);
+}
+
 .statement-text span {
   color: var(--orange);
   font-style: italic;
@@ -365,6 +377,15 @@ a { color: inherit; text-decoration: none; }
   background: var(--dark);
 }
 
+.testimonials-lead {
+  font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  background: var(--dark-2);
+  padding: 32px 44px;
+  margin-bottom: 50px;
+}
+
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -392,7 +413,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .final-cta .tagline {
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
   color: var(--orange-light);
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
