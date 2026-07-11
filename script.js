@@ -20,3 +20,28 @@ document.querySelectorAll('.btn, .service-card').forEach((el) => {
     el.style.setProperty('--spot-y', `${e.clientY - rect.top}px`);
   });
 });
+
+document.querySelectorAll('[data-scroll-gallery]').forEach((viewport) => {
+  const track = viewport.querySelector('.studio-gallery');
+  const originals = [...track.children];
+
+  originals.forEach((image) => {
+    const duplicate = image.cloneNode(true);
+    duplicate.setAttribute('aria-hidden', 'true');
+    track.appendChild(duplicate);
+  });
+
+  let loopWidth = 0;
+  const updateLoopWidth = () => {
+    loopWidth = track.children[originals.length].offsetLeft;
+    track.style.setProperty('--gallery-loop-width', `-${loopWidth}px`);
+  };
+
+  const refreshGallery = () => {
+    updateLoopWidth();
+  };
+
+  window.addEventListener('load', refreshGallery);
+  window.addEventListener('resize', refreshGallery);
+  requestAnimationFrame(refreshGallery);
+});
